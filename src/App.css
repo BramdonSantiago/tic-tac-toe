@@ -1,0 +1,253 @@
+body {
+  background-color: #1d62b6;
+  color: #FFF;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.content-game {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-game {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  span {
+    color: #f7ca45;
+  }
+}
+
+.players-info-content {
+  margin-top: 2rem;
+  background-color: #104c9c;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.250rem;
+  font-weight: 700;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  .player-turn-name {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .turn-player-symbol {
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+  .versus-text {
+    font-size: 2rem;
+  }
+}
+
+.board {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+  background-color: #afbccf;
+  border: 5px solid #FFF;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  .square {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 7rem;
+    /* background-color: #afbccf; */
+    border: 3px solid #667e9f;
+    cursor: pointer;
+    position: relative;
+    &:nth-child(1) {
+      border-left: 0;
+      border-top: 0;
+    }
+    &:nth-child(2) {
+      border-top: 0;
+    }
+    &:nth-child(8) {
+      border-bottom: 0;
+    }
+    &:nth-child(3) {
+      border-right: 0;
+      border-top: 0;
+    }
+    &:nth-child(4) {
+      border-left: 0;
+    }
+    &:nth-child(6) {
+      border-right: 0;
+    }
+    &:nth-child(7) {
+      border-left: 0;
+      border-bottom: 0;
+    }
+    &:nth-child(9) {
+      border-right: 0;
+      border-bottom: 0;
+    }
+    &:hover {
+      /* background-color: #f7ca45; */
+      background-color: rgba(6, 182, 212, 0.25);
+    }
+    .player-symbol {
+      font-size: 5rem;
+      font-weight: 900;
+      color: #33527d;
+    }
+  }
+}
+
+.square:not(.filled):hover::after {
+  content: attr(data-preview);
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 2rem;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.turn {
+  color: #06B6D4;
+  /* color: #f7ca45; */
+}
+
+.winner {
+  color: #30ae29;
+}
+
+.tie {
+  color: #06B6D4;
+  /* color: #f7ca45; */
+}
+
+.filled {
+  cursor: default !important;
+  pointer-events: none !important;
+  &:hover {
+    background-color: rgba(225, 50, 49, 0.25) !important;
+  }
+}
+
+.board-winner {
+  .square {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.board-tie {
+  .square {
+    pointer-events: none;
+    cursor: default;
+    animation: pulseTie 1s ease infinite;
+    -webkit-animation: pulseTie 1s ease infinite;
+  }
+}
+
+.line-winner {
+  animation: pulseWinner 1s ease infinite;
+  -webkit-animation: pulseWinner 1s ease infinite;
+}
+
+.turn-info-content {
+  margin-top: 1rem;
+  background-color: #104c9c;
+  padding: 1rem;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  .text-turn {
+    font-size: 1.250rem;
+    font-weight: 700;
+  }
+}
+
+.btns-content {
+  margin-top: 1rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 12px 2rem;
+  color: #FFF;
+  border: 0;
+  font-size: 1.250rem;
+  font-weight: 600;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  &.btn-primary {
+    background-color: #30ae29;
+    box-shadow: 0 6px 6px 0 #135010;
+    &:hover {
+      background-color: #1d8b17;
+    }
+  }
+  &.btn-secondary {
+    background-color: #e13231;
+    box-shadow: 0 6px 6px 0 #330000;
+    &:hover {
+      background-color: #c41f1f;
+    }
+  }
+}
+
+@keyframes pulseWinner {
+  from {
+    opacity: 0;
+    background-color: transparent;
+  }
+  to {
+    opacity: 1;
+    background-color: #30ae29;
+  }
+}
+
+@keyframes pulseTie {
+  from {
+    opacity: 0;
+    background-color: transparent;
+  }
+  to {
+    opacity: 1;
+    background-color: rgba(6, 182, 212, 0.25);
+  }
+}
