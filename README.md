@@ -1,6 +1,14 @@
 # React + TypeScript + Vite
 
+<b>Play!</b>
+https://bramdonsantiago.github.io/tic-tac-toe/
+
+<img src="https://drive.google.com/uc?export=view&id=1HDvdwyZK5LiQlSvKLdACAID7FAajH9X3" style="width: 100%;" />
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
 
 Currently, two official plugins are available:
 
