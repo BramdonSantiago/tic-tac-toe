@@ -195,9 +195,13 @@ body {
 .btns-content {
   margin-top: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   justify-content: center;
   gap: 1rem;
+  @media(min-width: 1200px) {
+    flex-direction: row;
+  }
 }
 
 .btn {
