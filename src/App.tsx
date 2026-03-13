@@ -84,7 +84,7 @@ function App() {
         <div className='content-game'>
           <h1 className='title-game'>Tic <span>Tac</span> Toe</h1>
           <div className='players-info-content'>
-            <div className={`${tie ? "tie": ""} ${isTurnX ? "turn" : ""} ${resultWinner?.winner === 'X' ? "winner" : ""}`}>
+            <div className={`player-info-content ${tie ? "tie": ""} ${isTurnX ? "turn" : ""} ${resultWinner?.winner === 'X' ? "winner" : ""}`}>
               <span className='turn-player-symbol'>X</span>
               <p className='player-turn-name'>Jugador 1</p>
               <span>{winnerX}</span>
@@ -92,7 +92,7 @@ function App() {
             <div>
               <span className='versus-text'>VS</span>
             </div>
-            <div className={`${tie ? "tie" : ""} ${!isTurnX ? "turn" : ""} ${resultWinner?.winner === 'O' ? "winner" : ""}`}>
+            <div className={`player-info-content ${tie ? "tie" : ""} ${!isTurnX ? "turn" : ""} ${resultWinner?.winner === 'O' ? "winner" : ""}`}>
               <span className='turn-player-symbol'>O</span>
               <p className='player-turn-name'>Jugador 2</p>
               <span>{winnerO}</span>
