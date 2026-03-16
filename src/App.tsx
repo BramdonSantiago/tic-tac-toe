@@ -190,7 +190,7 @@ function App() {
             </div>
             <div className={`player-info-content ${tie ? "tie" : ""} ${!isTurnX ? "turn" : ""} ${resultWinner?.winner === 'O' ? "winner" : ""}`}>
               <span className='turn-player-symbol'>O</span>
-              <p className='player-turn-name'>PC</p>
+              <p className='player-turn-name'>IA</p>
               <span>{winnerO}</span>
             </div>
           </div>
@@ -205,8 +205,8 @@ function App() {
             <p className='text-turn'>
               {tie
                 ? "¡Empate!"
-                : resultWinner ? `¡${resultWinner.winner === 'X' ? "Ganaste" : "Ganó PC"}!`
-                  : `¡${isTurnX ? "Tú turno" : "Turno PC"}!`
+                : resultWinner ? `¡${resultWinner.winner === 'X' ? "Ganaste" : "Ganó IA"}!`
+                  : `¡${isTurnX ? "Tú turno" : "Turno IA"}!`
               }
             </p>
           </div>
