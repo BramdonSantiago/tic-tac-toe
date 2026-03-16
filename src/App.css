@@ -89,6 +89,7 @@ body {
   }
 
   .turn-player-symbol {
+    font-family: "Comfortaa", sans-serif;
     font-weight: 900;
     font-size: 3.5rem;
     line-height: 1;
@@ -106,6 +107,7 @@ body {
 }
 
 .board {
+  font-family: "Comfortaa", sans-serif;
   margin-top: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -194,6 +196,12 @@ body {
     }
   }
 }
+
+.square.filled .player-symbol {
+  animation: revealSymbol 1s forwards;
+  -webkit-animation: revealSymbol 1s forwards;
+}
+
 
 .square:not(.filled):hover::after {
   content: attr(data-preview);
@@ -411,5 +419,22 @@ body {
   100%{
     background-position: 0% 50%;
     box-shadow: 40px 60px 90px 0 rgba(255, 45, 149, 0.25);
+  }
+}
+
+@keyframes revealSymbol {
+  from {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
   }
 }
