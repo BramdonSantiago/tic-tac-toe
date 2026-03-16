@@ -4,11 +4,13 @@
 https://bramdonsantiago.github.io/tic-tac-toe/
 
 <b>Update!</b>
+<br />
+<b>Now:</b>
 <img src="https://drive.google.com/uc?export=view&id=1Uiu_jaQC0YVcVg_HsQsaLfRJP8kj8uuK" style="width: 100%;" />
 
 
-
-
+<br />
+<b>Before:</b>
 <img src="https://drive.google.com/uc?export=view&id=1HDvdwyZK5LiQlSvKLdACAID7FAajH9X3" style="width: 100%;" />
 
 
