@@ -8,7 +8,7 @@ function App() {
   const [isTurnX, setIsTurnX] = useState(startingPlayerX);
   const [winnerX, setWinnerX] = useState(0);
   const [winnerO, setWinnerO] = useState(0);
-  const [vsAI, setVsAI] = useState(true);
+  const [vsAI] = useState(true);
 
   const handleClickThrowTurn = (index: number) => {
     if (board[index] || resultWinner || tie) return;
