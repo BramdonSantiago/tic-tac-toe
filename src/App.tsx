@@ -8,6 +8,18 @@ function App() {
   const [isTurnX, setIsTurnX] = useState(startingPlayerX);
   const [winnerX, setWinnerX] = useState(0);
   const [winnerO, setWinnerO] = useState(0);
+  const [vsAI, setVsAI] = useState(true);
+
+  const handleClickThrowTurn = (index: number) => {
+    if (board[index] || resultWinner || tie) return;
+    if (vsAI && !isTurnX) return;
+
+    const newBoard = [...board];
+    newBoard[index] = isTurnX ? "X" : "O";
+
+    setBoard(newBoard);
+    setIsTurnX(prev => !prev);
+  };
 
   const linesWinner = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -15,159 +27,117 @@ function App() {
     [0, 4, 8], [2, 4, 6]
   ];
 
-  const handleClickThrowTurn = (index: number) => {
-
-    if (!isTurnX) return;
-    if (board[index] || resultWinner || tie) return;
-
-    const newBoard = [...board];
-    newBoard[index] = "X";
-
-    setBoard(newBoard);
-    setIsTurnX(false);
-  };
-
-  const verifiedWinner = (board: Square[]) => {
-
+  // =========================
+  // 🧠 IA
+  // =========================
+  const getBestMove = (board: Square[]) => {
+    // 1. Intentar ganar
     for (let [a, b, c] of linesWinner) {
-
-      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-        return {
-          winner: board[a],
-          line: [a, b, c]
-        };
-      }
-
-    }
-
-    return null;
-  };
-
-  const getComputerMove = (board: Square[]) => {
-
-    // 1️⃣ Intentar ganar
-    for (let [a, b, c] of linesWinner) {
-
       const line = [board[a], board[b], board[c]];
-
-      if (line.filter(v => v === "O").length === 2 && line.includes(null)) {
-
-        const emptyIndex = [a, b, c][line.indexOf(null)];
-        return emptyIndex;
-
+      if (line.filter(v => v === 'O').length === 2 && line.includes(null)) {
+        return [a, b, c][line.indexOf(null)];
       }
-
     }
 
-    // 2️⃣ Bloquear jugador
+    // 2. Bloquear jugador
     for (let [a, b, c] of linesWinner) {
-
       const line = [board[a], board[b], board[c]];
-
-      if (line.filter(v => v === "X").length === 2 && line.includes(null)) {
-
-        const emptyIndex = [a, b, c][line.indexOf(null)];
-        return emptyIndex;
-
+      if (line.filter(v => v === 'X').length === 2 && line.includes(null)) {
+        return [a, b, c][line.indexOf(null)];
       }
-
     }
 
-    // 3️⃣ Tomar centro
-    if (board[4] === null) return 4;
+    // 3. Centro
+    if (!board[4]) return 4;
 
-    // 4️⃣ Tomar esquina
-    const corners = [0, 2, 6, 8].filter(i => board[i] === null);
-
+    // 4. Esquinas
+    const corners = [0, 2, 6, 8].filter(i => !board[i]);
     if (corners.length) {
-
       return corners[Math.floor(Math.random() * corners.length)];
-
     }
 
-    // 5️⃣ Tomar cualquier espacio libre
+    // 5. Espacio libre
     const empty = board
-      .map((v, i) => v === null ? i : null)
+      .map((v, i) => (v === null ? i : null))
       .filter(v => v !== null) as number[];
 
     return empty[Math.floor(Math.random() * empty.length)];
   };
 
-  const resultWinner = verifiedWinner(board);
-  const tie = !resultWinner?.winner && board.every(square => square !== null);
-
+  // =========================
+  // 🤖 TURNO AUTOMÁTICO IA
+  // =========================
   useEffect(() => {
-
-    if (resultWinner?.winner === "X") {
-
-      setWinnerX(prev => prev + 1);
-
-    }
-
-    if (resultWinner?.winner === "O") {
-
-      setWinnerO(prev => prev + 1);
-
-    }
-
-  }, [resultWinner?.winner]);
-
-  useEffect(() => {
-
+    if (!vsAI) return;
     if (isTurnX) return;
     if (resultWinner || tie) return;
 
-    const delay = Math.floor(Math.random() * 2000) + 1000;
+    const delay = Math.floor(Math.random() * (4000 - 1000 + 1)) + 1000;
 
     const timeout = setTimeout(() => {
-
-      const move = getComputerMove(board);
+      const move = getBestMove(board);
 
       if (move !== undefined) {
-
         const newBoard = [...board];
         newBoard[move] = "O";
 
         setBoard(newBoard);
         setIsTurnX(true);
-
       }
-
     }, delay);
 
     return () => clearTimeout(timeout);
+  }, [board, isTurnX, vsAI]);
 
-  }, [board, isTurnX]);
-
-  const restartBoard = () => {
-
-    setBoard(Array(9).fill(null));
-
+  // =========================
+  // 🏆 VERIFICAR GANADOR
+  // =========================
+  const verifiedWinner = (board: Square[]) => {
+    for (let [a, b, c] of linesWinner) {
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        return { winner: board[a], line: [a, b, c] };
+      }
+    }
+    return null;
   };
 
+  const resultWinner = verifiedWinner(board);
+  const tie = !resultWinner?.winner && board.every((sq) => sq !== null);
+
+  // =========================
+  // 📊 SCORE
+  // =========================
+  useEffect(() => {
+    if (resultWinner?.winner === "X") {
+      setWinnerX(prev => prev + 1);
+    }
+    if (resultWinner?.winner === "O") {
+      setWinnerO(prev => prev + 1);
+    }
+  }, [resultWinner?.winner]);
+
+  // =========================
+  // 🔁 CONTINUAR
+  // =========================
   const continueGaming = () => {
-
     restartBoard();
-
     setStartingPlayerX(prev => {
-
       const next = !prev;
       setIsTurnX(next);
-
       return next;
-
     });
-
   };
 
   const restartGame = () => {
-
     restartBoard();
-
     setStartingPlayerX(true);
     setIsTurnX(true);
     setWinnerX(0);
     setWinnerO(0);
+  };
+
+  const restartBoard = () => {
+    setBoard(Array(9).fill(null));
 
   };
 
@@ -182,7 +152,7 @@ function App() {
           <div className='players-info-content'>
             <div className={`player-info-content ${tie ? "tie" : ""} ${isTurnX ? "turn" : ""} ${resultWinner?.winner === 'X' ? "winner" : ""}`}>
               <span className='turn-player-symbol'>X</span>
-              <p className='player-turn-name'>Tú</p>
+              <p className='player-turn-name'>{vsAI ? "Tú" : "Jugador 1"}</p>
               <span>{winnerX}</span>
             </div>
             <div>
@@ -190,7 +160,7 @@ function App() {
             </div>
             <div className={`player-info-content ${tie ? "tie" : ""} ${!isTurnX ? "turn" : ""} ${resultWinner?.winner === 'O' ? "winner" : ""}`}>
               <span className='turn-player-symbol'>O</span>
-              <p className='player-turn-name'>IA</p>
+              <p className='player-turn-name'>{vsAI ? "IA" : "Jugador 2"}</p>
               <span>{winnerO}</span>
             </div>
           </div>
@@ -202,13 +172,24 @@ function App() {
             ))}
           </div>
           <div className='turn-info-content'>
-            <p className='text-turn'>
-              {tie
-                ? "¡Empate!"
-                : resultWinner ? `¡${resultWinner.winner === 'X' ? "Ganaste" : "Ganó IA"}!`
-                  : `¡${isTurnX ? "Tú turno" : "Turno IA"}!`
-              }
-            </p>
+            {vsAI && (
+              <p className='text-turn'>
+                {tie
+                  ? "¡Empate!"
+                  : resultWinner ? `¡${resultWinner.winner === 'X' ? "Ganaste" : "Ganó IA"}!`
+                    : `¡${isTurnX ? "Tú turno" : "Turno IA"}!`
+                }
+              </p>
+            )}
+            {!vsAI && (
+              <p className='text-turn'>
+                {tie
+                  ? "¡Empate!"
+                  : resultWinner ? `¡Ganó ${resultWinner.winner === 'X' ? "Jugador 1" : "Jugador 2"}!`
+                    : `¡Turno ${isTurnX ? "Jugador 1" : "Jugador 2"}!`
+                }
+              </p>
+            )}
           </div>
           <div className='btns-content'>
             {(resultWinner || tie) && (
@@ -216,6 +197,7 @@ function App() {
             )}
             <button type='button' onClick={restartGame} className='btn btn-secondary'>Reiniciar partida</button>
           </div>
+
         </div>
       </div>
     </>
