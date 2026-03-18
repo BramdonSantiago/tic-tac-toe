@@ -445,7 +445,7 @@ body {
 
     50% {
         background-position: 100% 50%;
-        box-shadow: 40px 60px 90px 0 rgba(34, 3, 124, 0.25);
+        box-shadow: 40px 60px 90px 0 rgba(34, 3, 124, 0.9);
     }
 
     100% {
