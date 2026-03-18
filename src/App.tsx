@@ -149,7 +149,7 @@ function App() {
       <div className='tic-tac-toe'>
         <div className='content-game'>
           <h1 className='title-game'>Tic <span>Tac</span> Toe</h1>
-          <div className='players-info-content'>
+          <div className={`players-info-content ${tie ? "players-info-content-tie" : ""} ${resultWinner ? "players-info-content-winner" : ""}`}>
             <div className={`player-info-content ${tie ? "tie" : ""} ${isTurnX ? "turn" : ""} ${resultWinner?.winner === 'X' ? "winner" : ""}`}>
               <span className='turn-player-symbol'>X</span>
               <p className='player-turn-name'>{vsAI ? "Tú" : "Jugador 1"}</p>
