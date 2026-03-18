@@ -13,7 +13,6 @@ function MenuPage() {
                         <button onClick={() => navigate("/game", { state: { vsAI: true } })} className='btn-menu btn-menu-primary'>
                             VS IA
                         </button>
-
                         <button onClick={() => navigate("/game", { state: { vsAI: false } })} className='btn-menu btn-menu-secondary'>
                             VS Jugador
                         </button>
