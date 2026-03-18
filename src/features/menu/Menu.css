@@ -9,7 +9,7 @@
     display: flex;
     gap: 2rem;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     flex-direction: column;
     height: 80dvh;
     @media(min-width: 1200px) {
