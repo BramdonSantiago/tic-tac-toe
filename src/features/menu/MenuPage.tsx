@@ -11,10 +11,12 @@ function MenuPage() {
                 <div className='content-menu'>
                     <div className='btns-menu'>
                         <button onClick={() => navigate("/game", { state: { vsAI: true } })} className='btn-menu btn-menu-primary'>
-                            VS IA
+                            <h3 className='title-main-btn'><span className='versus-text'>VS</span> IA</h3>
+                            <p className='text-description-btn'>Jugar contra IA</p>
                         </button>
                         <button onClick={() => navigate("/game", { state: { vsAI: false } })} className='btn-menu btn-menu-secondary'>
-                            VS Jugador
+                            <h3 className='title-main-btn'><span className='versus-text'>VS</span> OPONENTE</h3>
+                            <p className='text-description-btn'>Jugar contra jugador local</p>
                         </button>
                     </div>
                 </div>
