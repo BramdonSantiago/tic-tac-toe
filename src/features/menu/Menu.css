@@ -96,14 +96,14 @@
 
 @keyframes boxShadowAnimate {
     0% {
-        box-shadow: inset 20px 40px 90px 0 rgba(0, 0, 0, 0.9);
-    }
-
-    50% {
         box-shadow: inset -20px -40px 90px 0 rgba(34, 3, 124, 0.9);
     }
 
+    50% {
+        box-shadow: inset -20px -40px 90px 0 rgba(255, 45, 149, 0.25);
+    }
+
     100% {
-        box-shadow: inset 20px 40px 90px 0 rgba(0, 0, 0, 0.9);
+        box-shadow: inset -20px -40px 90px 0 rgba(34, 3, 124, 0.9);
     }
 }
