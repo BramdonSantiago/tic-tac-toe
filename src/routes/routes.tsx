@@ -15,4 +15,7 @@ export const routes = createBrowserRouter([
         path: "/game",
         element: <GamePage />,
     },
-]);
+
+], {
+    basename: "/tic-tac-toe",
+});
