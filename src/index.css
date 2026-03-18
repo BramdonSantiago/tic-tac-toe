@@ -1,11 +1,24 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
+
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-
+body {
+  background-color: #020617;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #FFF;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+}
