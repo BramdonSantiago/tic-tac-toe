@@ -82,7 +82,7 @@ body {
       0 0 8px #60a5fa,
       0 0 16px #3b82f6,
       0 0 30px #2563eb;
-  }
+    }
   .player-turn-name {
     margin-top: 0;
     margin-bottom: 0;
@@ -225,19 +225,25 @@ body {
 .player-info-content.turn {
   /* color: #06B6D4; */
   color: #10fefe;
+  /* text-shadow:
+  0 0 4px #FFF,
+  0 0 8px #10fefe,
+  0 0 16px #00dbdb,
+  0 0 30px #008888; */
   text-shadow:
-    0 0 0px #10fefe,
-    0 0 0px #10fefe,
-    0 0 20px #10fefe;
+    0 0 8px #10fefe,
+    0 0 16px #10fefe,
+    0 0 30px #10fefe;
+
 }
 
 .player-info-content.winner {
   /* color: #30ae29; */
   color: #b2fd39;
   text-shadow:
-    0 0 0px #b2fd39,
-    0 0 0px #b2fd39,
-    0 0 20px #b2fd39;
+    0 0 8px #b2fd39,
+    0 0 16px #b2fd39,
+    0 0 30px #b2fd39;
 }
 
 .tie {
