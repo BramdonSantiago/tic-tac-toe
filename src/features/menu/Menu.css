@@ -69,6 +69,7 @@
         -moz-border-radius: 8px;
         -ms-border-radius: 8px;
         -o-border-radius: 8px;
+        z-index: -1;
     }
 
     .img-content {
@@ -96,7 +97,7 @@
 
     .title-main-btn {
         margin-top: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0.250rem;
         font-size: 2rem;
     }
 
