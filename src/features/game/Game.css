@@ -3,10 +3,6 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    min-height: calc(100dvh - 4.5rem * 2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     &::before {
         content: "";
         position: absolute;
