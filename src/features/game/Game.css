@@ -1,10 +1,24 @@
 .content-game {
-    max-width: 600px;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    @media(min-width: 576px) and (max-width: 767px) {
+    @media(min-width: 540px) {
         max-width: 420px;
+        margin-top: 5rem;
+    }
+    @media(min-width: 768px) {
+        max-width: 440px;
+    }
+    @media(min-width: 912px) {
+        max-width: 480px;
+    }
+    @media(min-width: 1024px) {
+        max-width: 520px;
+    }
+    @media(min-width: 1200px) {
+        max-width: 600px;
+        margin-top: 2rem;
     }
     &::before {
         content: "";
@@ -46,7 +60,6 @@
 }
 
 .players-info-content {
-    margin-top: 2rem;
     /* background-color: #104c9c; */
     background-color: #090253;
     box-shadow:
@@ -360,12 +373,12 @@
     justify-content: center;
     gap: 1rem;
 
-    @media(min-width: 768px) {
+    @media(min-width: 1200px) {
         flex-direction: row;
     }
     .btn {
         width: 85%;
-        @media(min-width: 768px) {
+        @media(min-width: 1200px) {
             width: 50%;
         }
     }

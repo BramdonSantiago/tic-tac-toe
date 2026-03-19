@@ -1,11 +1,23 @@
 .content-menu {
     margin-top: 2rem;
-    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    @media(min-width: 576px) and (max-width: 767px) {
+    @media(min-width: 540px) {
         max-width: 420px;
+        margin-top: 5rem;
+    }
+    @media(min-width: 768px) {
+        max-width: 440px;
+    }
+    @media(min-width: 912px) {
+        max-width: 480px;
+    }
+    @media(min-width: 1024px) {
+        max-width: 520px;
+    }
+    @media(min-width: 1200px) {
+        max-width: 600px;
     }
     &::before {
         content: "";
@@ -30,8 +42,9 @@
     align-items: center;
     flex-direction: column;
 
-    @media(min-width: 768px) {
+    @media(min-width: 1200px) {
         flex-direction: row;
+        align-items: stretch;
     }
 }
 
@@ -105,6 +118,7 @@
         margin-top: 0;
         margin-bottom: 0.250rem;
         font-size: 2rem;
+        line-height: 1;
     }
 
     .text-description-btn {
@@ -189,7 +203,7 @@
         gap: 0.75rem;
         width: 85%;
 
-        @media(min-width: 768px) {
+        @media(min-width: 1200px) {
             width: 50%;
         }
 
