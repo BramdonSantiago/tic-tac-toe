@@ -156,7 +156,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 7rem;
+        min-height: 5.75rem;
         /* background-color: #afbccf; */
         /* border: 3px solid #00E5FF; */
         box-shadow:
@@ -164,7 +164,9 @@
             inset 0 0 12px #00E5FF;
         cursor: pointer;
         position: relative;
-
+        @media(min-width: 1200px) {
+            min-height: 7rem;
+        }
         &:nth-child(1) {
             border-left: 0;
             border-top: 0;
@@ -207,6 +209,7 @@
         }
 
         .player-symbol {
+            line-height: 1;
             font-size: 5rem;
             font-weight: 900;
             /* color: #33527d; */
