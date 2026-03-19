@@ -119,6 +119,9 @@
         margin-bottom: 0.250rem;
         font-size: 2rem;
         line-height: 1;
+        @media(min-width: 1200px) {
+            min-height: 64px;
+        }
     }
 
     .text-description-btn {
