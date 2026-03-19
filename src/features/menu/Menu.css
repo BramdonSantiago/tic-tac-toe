@@ -108,6 +108,7 @@
         margin-top: 0;
         margin-bottom: 0;
         font-size: 1rem;
+        line-height: 1;
     }
 
     &.btn-menu-primary {
@@ -124,8 +125,8 @@
             img {
                 filter: drop-shadow(0 10px 10px #6366F1);
                 -webkit-filter: drop-shadow(0 10px 10px #6366F1);
-                animation: imgFloatAnimate 6s 30s ease forwards;
-                -webkit-animation: imgFloatAnimate 6s 30s ease forwards;
+                animation: imgFloatAnimate 6s 10s ease forwards;
+                -webkit-animation: imgFloatAnimate 6s 10s ease forwards;
             }
         }
 
@@ -234,6 +235,7 @@
         -ms-transform: scale(1);
         -o-transform: scale(1);
         translate: -50% 0;
+        opacity: 1;
     }
 
     50% {
@@ -243,6 +245,7 @@
         -ms-transform: scale(0.9);
         -o-transform: scale(0.9);
         translate: -50% 20px;
+        opacity: 0.9;
     }
 
     100% {
@@ -252,5 +255,6 @@
         -ms-transform: scale(1);
         -o-transform: scale(1);
         translate: -50% 0;
+        opacity: 1;
     }
 }
