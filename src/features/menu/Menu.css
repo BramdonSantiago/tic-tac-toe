@@ -233,6 +233,7 @@
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
+        translate: -50% 0;
     }
 
     50% {
@@ -241,6 +242,7 @@
         -moz-transform: scale(0.9);
         -ms-transform: scale(0.9);
         -o-transform: scale(0.9);
+        translate: -50% 20px;
     }
 
     100% {
@@ -249,5 +251,6 @@
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
+        translate: -50% 0;
     }
 }
