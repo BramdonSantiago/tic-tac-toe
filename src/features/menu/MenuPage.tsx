@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import robot from '../../assets/img/robot.png';
 import multijugador from '../../assets/img/multijugador.png';
+import configuracion from '../../assets/img/configuracion.png';
+import apagar from '../../assets/img/apagar.png';
 
 function MenuPage() {
     const navigate = useNavigate();
@@ -18,7 +20,7 @@ function MenuPage() {
                                 <img src={robot} alt="" />
                             </div>
                             <h3 className='title-main-btn'><span className='versus-text'>VS</span> IA</h3>
-                            <p className='text-description-btn'>Juega contra la IA</p>
+                            <p className='text-description-btn'>Juega contra la IA y obtén la victoria</p>
                         </button>
                         <button onClick={() => navigate("/game", { state: { vsAI: false } })} className='btn-menu btn-menu-secondary btn-box-shadow-animate'>
                             <div className='img-content'>
@@ -27,6 +29,10 @@ function MenuPage() {
                             <h3 className='title-main-btn'><span className='versus-text'>VS</span> OPONENTE</h3>
                             <p className='text-description-btn'>Juega contra un jugador local</p>
                         </button>
+                    </div>
+                    <div className='btns-options'>
+                        <div className='btn btn-primary'><img src={configuracion} alt="" className='btn-icon' />Configuración</div>
+                        <div className='btn btn-secondary'><img src={apagar} alt="" className='btn-icon' />Salir</div>
                     </div>
                 </div>
             </div>

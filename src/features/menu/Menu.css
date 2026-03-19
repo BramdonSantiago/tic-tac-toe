@@ -1,6 +1,6 @@
 .content-menu {
     margin-top: 2rem;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 
@@ -27,11 +27,11 @@
     align-items: center;
     flex-direction: column;
 
-    /* height: calc(100dvh - 11rem); */
     @media(min-width: 1200px) {
         flex-direction: row;
     }
 }
+
 
 .btn-menu {
     font-family: "Arimo", sans-serif;
@@ -57,6 +57,7 @@
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
     position: relative;
+
     &:before {
         content: "";
         border: 1px solid transparent;
@@ -64,7 +65,7 @@
         top: 5px;
         left: 5px;
         width: calc(100% - 5px * 2);
-        height: calc(100% -  5px * 2);
+        height: calc(100% - 5px * 2);
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -85,6 +86,7 @@
         margin-bottom: 1rem;
         border: 1px solid transparent;
         position: relative;
+
         img {
             width: 100%;
             height: 8rem;
@@ -110,15 +112,20 @@
 
     &.btn-menu-primary {
         border-color: #6366F1;
+
         &::before {
             border-color: rgba(99, 102, 241, .5);
         }
+
         .img-content {
             border-color: rgba(99, 102, 241, .5);
             box-shadow: inset 0 -40px 40px 0 rgba(99, 102, 241, 0.25);
+
             img {
                 filter: drop-shadow(0 10px 10px #6366F1);
                 -webkit-filter: drop-shadow(0 10px 10px #6366F1);
+                animation: imgFloatAnimate 6s 15s ease forwards;
+                -webkit-animation: imgFloatAnimate 6s 15s ease forwards;
             }
         }
 
@@ -134,15 +141,20 @@
 
     &.btn-menu-secondary {
         border-color: #8B5CF6;
+
         &:before {
             border-color: rgba(139, 92, 246, .5);
         }
+
         .img-content {
             border-color: rgba(139, 92, 246, .5);
             box-shadow: inset 0 -40px 40px 0 rgba(139, 92, 246, 0.25);
+
             img {
                 filter: drop-shadow(0 10px 10px #8B5CF6);
                 -webkit-filter: drop-shadow(0 10px 10px #8B5CF6);
+                animation: imgFloatAnimate 6s 30s ease forwards;
+                -webkit-animation: imgFloatAnimate 6s 30s ease forwards;
             }
         }
 
@@ -158,17 +170,86 @@
 }
 
 
+.btns-options {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+
+    .btn {
+        justify-content: center;
+        padding: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        width: 85%;
+
+        @media(min-width: 1200px) {
+            width: 50%;
+        }
+
+        .btn-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        &.btn-primary {
+            .btn-icon {
+                filter: drop-shadow(0 0 10px #6366F1);
+                -webkit-filter: drop-shadow(0 0 10px #6366F1);
+            }
+        }
+
+        &.btn-secondary {
+            .btn-icon {
+                filter: drop-shadow(0 0 10px #c715be);
+                -webkit-filter: drop-shadow(0 0 10px #c715be);
+            }
+        }
+    }
+}
+
+
 
 @keyframes boxShadowAnimate {
     0% {
-        box-shadow: inset -20px -40px 90px 0 rgba(34, 3, 124, 0.9);
+        box-shadow: inset -20px -40px 90px 0 #22037c;
     }
 
     50% {
-        box-shadow: inset -20px -40px 90px 0 rgba(255, 45, 149, 0.25);
+        box-shadow: inset -20px -40px 90px 0 rgba(255, 45, 149, 0.5);
     }
 
     100% {
-        box-shadow: inset -20px -40px 90px 0 rgba(34, 3, 124, 0.9);
+        box-shadow: inset -20px -40px 90px 0 #22037c;
+    }
+}
+
+@keyframes imgFloatAnimate {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -o-transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
     }
 }

@@ -44,7 +44,7 @@
 }
 
 .players-info-content {
-    margin-top: 1rem;
+    margin-top: 2rem;
     /* background-color: #104c9c; */
     background-color: #090253;
     box-shadow:
@@ -453,17 +453,14 @@
 @keyframes borderMove {
     0% {
         background-position: 0% 50%;
-        /* box-shadow: 40px 60px 90px 0 rgba(255, 45, 149, 0.25); */
     }
 
     50% {
         background-position: 100% 50%;
-        /* box-shadow: 40px 60px 90px 0 rgba(34, 3, 124, 0.9); */
     }
 
     100% {
         background-position: 0% 50%;
-        /* box-shadow: 40px 60px 90px 0 rgba(255, 45, 149, 0.25); */
     }
 }
 
@@ -485,8 +482,3 @@
     }
 }
 
-
-.prueba {
-    box-shadow: 3px -2px 7px 1px #FF1493;
-    background-color: transparent;
-}
