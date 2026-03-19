@@ -3,7 +3,10 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-
+    min-height: calc(100dvh - 4.5rem * 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &::before {
         content: "";
         position: absolute;
@@ -164,7 +167,7 @@
             inset 0 0 12px #00E5FF;
         cursor: pointer;
         position: relative;
-        @media(min-width: 1200px) {
+        @media(min-width: 768px) {
             min-height: 7rem;
         }
         &:nth-child(1) {
@@ -358,12 +361,12 @@
     justify-content: center;
     gap: 1rem;
 
-    @media(min-width: 1200px) {
+    @media(min-width: 768px) {
         flex-direction: row;
     }
     .btn {
         width: 85%;
-        @media(min-width: 1200px) {
+        @media(min-width: 768px) {
             width: 50%;
         }
     }
