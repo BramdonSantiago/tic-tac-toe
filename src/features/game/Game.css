@@ -44,7 +44,7 @@
 }
 
 .players-info-content {
-    margin-top: 2rem;
+    margin-top: 1rem;
     /* background-color: #104c9c; */
     background-color: #090253;
     box-shadow:
@@ -103,7 +103,7 @@
 .board {
     /* font-family: "Comfortaa", sans-serif; */
     font-family: "Arimo", sans-serif;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 85%;
@@ -320,7 +320,7 @@
 }
 
 .turn-info-content {
-    margin-top: 2rem;
+    margin-top: 1rem;
     /* background-color: #104c9c; */
     background-color: #090253;
     box-shadow:
