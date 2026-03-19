@@ -117,11 +117,8 @@
     .title-main-btn {
         margin-top: 0;
         margin-bottom: 0.250rem;
-        font-size: 2rem;
+        font-size: 1.875rem;
         line-height: 1;
-        @media(min-width: 1200px) {
-            min-height: 64px;
-        }
     }
 
     .text-description-btn {
