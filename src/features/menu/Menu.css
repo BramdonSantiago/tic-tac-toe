@@ -124,8 +124,8 @@
             img {
                 filter: drop-shadow(0 10px 10px #6366F1);
                 -webkit-filter: drop-shadow(0 10px 10px #6366F1);
-                animation: imgFloatAnimate 6s 15s ease forwards;
-                -webkit-animation: imgFloatAnimate 6s 15s ease forwards;
+                animation: imgFloatAnimate 6s 30s ease forwards;
+                -webkit-animation: imgFloatAnimate 6s 30s ease forwards;
             }
         }
 
@@ -153,8 +153,6 @@
             img {
                 filter: drop-shadow(0 10px 10px #8B5CF6);
                 -webkit-filter: drop-shadow(0 10px 10px #8B5CF6);
-                animation: imgFloatAnimate 6s 30s ease forwards;
-                -webkit-animation: imgFloatAnimate 6s 30s ease forwards;
             }
         }
 
