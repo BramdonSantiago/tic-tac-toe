@@ -4,6 +4,7 @@ import styles from './StartingGameModal.module.css';
 
 import ReactDOM from "react-dom";
 
+import playerX from '../../assets/img/player-x.png';
 import robot from '../../assets/img/robot-2.png';
 
 const StartingGameModal = ({ isOpen, onClose }: any) => {
@@ -37,7 +38,9 @@ const StartingGameModal = ({ isOpen, onClose }: any) => {
         <div className={`${styles.modalOverlay} ${show ? styles.show : styles.hide}`}>
             <div className={styles.modalContent}>
                 <div className={styles.modalTextVersus}>
-                    <span className={styles.playerText}>X</span> <span className={styles.versusText}>VS</span> <img src={robot} alt="" />
+                    <img src={playerX} alt="" className={styles.playerX} />
+                    <span className={styles.versusText}>VS</span> 
+                    <img src={robot} alt="" className={styles.playerIA} />
                 </div>
                 <div className={styles.modalContentReady}>
                     <span className={styles.modalTextReady}>¿LISTO?</span>
