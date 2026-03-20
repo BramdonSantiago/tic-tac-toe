@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import robot from '../../assets/img/robot.png';
 import multijugador from '../../assets/img/multijugador.png';
 import configuracion from '../../assets/img/configuracion.png';
-import apagar from '../../assets/img/apagar.png';
+import apagar from '../../assets/img/apagar-2-2.png';
 
 function MenuPage() {
     const navigate = useNavigate();
