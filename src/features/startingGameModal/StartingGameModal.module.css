@@ -67,16 +67,16 @@
     width: 64px;
     height: 64px;
     object-fit: contain;
-    filter: drop-shadow(0 10px 10px #b2fd39);
-    -webkit-filter: drop-shadow(0 10px 10px #b2fd39);
+    filter: drop-shadow(0 0 10px #b2fd39);
+    -webkit-filter: drop-shadow(0 0 10px #b2fd39);
 }
 
 .playerIA {
     width: 100px;
     height: 64px;
     object-fit: contain;
-    filter: drop-shadow(0 10px 10px #6366F1);
-    -webkit-filter: drop-shadow(0 10px 10px #6366F1);
+    filter: drop-shadow(0 0 10px #6366F1);
+    -webkit-filter: drop-shadow(0 0 10px #6366F1);
 }
 
 .versusText {
