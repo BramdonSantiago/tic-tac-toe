@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import robot from '../../assets/img/robot.png';
 import multijugador from '../../assets/img/multijugador.png';
 import configuracion from '../../assets/img/configuracion.png';
-import apagar from '../../assets/img/apagar-2.png';
+import apagar from '../../assets/img/apagar-2-2.png';
 
 function MenuPage() {
     const navigate = useNavigate();
@@ -31,8 +31,8 @@ function MenuPage() {
                         </button>
                     </div>
                     <div className='btns-options'>
-                        <div className='btn btn-primary'><img src={configuracion} alt="" className='btn-icon' />Configuración</div>
-                        <div className='btn btn-secondary'><img src={apagar} alt="" className='btn-icon' />Salir</div>
+                        <div className='btn btn-secondary'><img src={configuracion} alt="" className='btn-icon' />Configuración</div>
+                        <div className='btn btn-primary'><img src={apagar} alt="" className='btn-icon' />Salir</div>
                     </div>
                 </div>
             </div>
