@@ -231,20 +231,6 @@
 
 
 
-@keyframes boxShadowAnimate {
-    0% {
-        box-shadow: inset -20px -40px 90px 0 #22037c;
-    }
-
-    50% {
-        box-shadow: inset -20px -40px 90px 0 rgba(255, 45, 149, 0.5);
-    }
-
-    100% {
-        box-shadow: inset -20px -40px 90px 0 #22037c;
-    }
-}
-
 @keyframes imgFloatAnimate {
     0% {
         transform: scale(1);

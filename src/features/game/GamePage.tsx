@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import type { Square } from "../../types";
 import './Game.css';
 import { useLocation } from "react-router-dom";
+import StartingGameModal from "../startingGameModal/StartingGameModal";
 
 function GamePage() {
     const location = useLocation();
     const vsAI = location.state?.vsAI ?? false;
+    const [open, setOpen] = useState(true);
     const [board, setBoard] = useState<Square[]>(Array(9).fill(null));
     const [startingPlayerX, setStartingPlayerX] = useState(true);
     const [isTurnX, setIsTurnX] = useState(startingPlayerX);
@@ -202,6 +204,9 @@ function GamePage() {
 
                 </div>
             </div>
+            {vsAI && (
+                <StartingGameModal isOpen={open} onClose={() => setOpen(false)}></StartingGameModal>
+            )}
         </>
     )
 }
