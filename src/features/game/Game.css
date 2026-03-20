@@ -31,8 +31,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        animation: boxShadowAnimate 6s infinite;
-        -webkit-animation: boxShadowAnimate 6s infinite;
     }
 }
 
