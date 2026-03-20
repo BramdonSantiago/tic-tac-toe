@@ -4,7 +4,7 @@ import styles from './StartingGameModal.module.css';
 
 import ReactDOM from "react-dom";
 
-import robot from '../../assets/img/robot.png';
+import robot from '../../assets/img/robot-2.png';
 
 const StartingGameModal = ({ isOpen, onClose }: any) => {
     const [show, setShow] = useState(false);
