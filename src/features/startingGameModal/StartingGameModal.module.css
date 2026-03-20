@@ -87,6 +87,10 @@
         0 0 40px #7e22ce;
 }
 
+.modalContentReady {
+    margin-top: 2rem;
+}
+
 .modalTextReady {
     text-shadow:
         0 0 4px #FFF,

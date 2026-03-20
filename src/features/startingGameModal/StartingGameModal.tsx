@@ -39,13 +39,15 @@ const StartingGameModal = ({ isOpen, onClose }: any) => {
                 <div className={styles.modalTextVersus}>
                     <span className={styles.playerText}>X</span> <span className={styles.versusText}>VS</span> <img src={robot} alt="" />
                 </div>
-                <span className={styles.modalTextReady}>¿LISTO?</span>
-                <div className={styles.modalCount}>
-                    <span>3</span>
-                    <span>2</span>
-                    {/* <span>1</span> */}
+                <div className={styles.modalContentReady}>
+                    <span className={styles.modalTextReady}>¿LISTO?</span>
+                    <div className={styles.modalCount}>
+                        <span>3</span>
+                        <span>2</span>
+                        {/* <span>1</span> */}
+                    </div>
+                    <span className={styles.modalTextGame}>¡VENGA!</span>
                 </div>
-                <span className={styles.modalTextGame}>¡VENGA!</span>
             </div>
         </div>,
         modalRoot
