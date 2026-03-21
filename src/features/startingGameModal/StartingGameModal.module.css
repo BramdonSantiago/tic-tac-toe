@@ -70,13 +70,26 @@
     filter: drop-shadow(0 0 10px #b2fd39);
     -webkit-filter: drop-shadow(0 0 10px #b2fd39);
 }
-
+.playerXOrange {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px #ffd65b);
+    -webkit-filter: drop-shadow(0 0 10px #ffd65b);
+}
 .playerIA {
     width: 100px;
     height: 64px;
     object-fit: contain;
     filter: drop-shadow(0 0 10px #6366F1);
     -webkit-filter: drop-shadow(0 0 10px #6366F1);
+}
+.playerO {
+    width: 100px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px #00E5FF);
+    -webkit-filter: drop-shadow(0 0 10px #00E5FF);
 }
 
 .versusText {
@@ -96,6 +109,7 @@
 }
 
 .modalTextReady {
+    line-height: 1;
     text-shadow:
         0 0 4px #FFF,
         0 0 8px #60a5fa,

@@ -50,9 +50,9 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
                 )}
                 {(mode === 'opponent') && (
                     <div className={styles.modalTextVersus}>
-                        <img src={playerXOrange} alt="" className={styles.playerX} />
+                        <img src={playerXOrange} alt="" className={styles.playerXOrange} />
                         <span className={styles.versusText}>VS</span> 
-                        <img src={playerO} alt="" className={styles.playerIA} />
+                        <img src={playerO} alt="" className={styles.playerO} />
                     </div>
                 )}
                 <div className={styles.modalContentReady}>
