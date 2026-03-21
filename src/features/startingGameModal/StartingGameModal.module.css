@@ -67,8 +67,27 @@
     margin-top: 2rem;
     font-size: 1.8rem;
     text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #9333ea, 0 0 40px #7e22ce;
-    animation: countAnimate 3s ease infinite;
-    -webkit-animation: countAnimate 3s ease infinite;
+    animation: countAnimate 3s linear infinite;
+    -webkit-animation: countAnimate 3s linear infinite;
+
+    span {
+        animation: countAnimate 1.5s ease infinite;
+        -webkit-animation: countAnimate 1.5s ease infinite;
+    }
+
+    span {
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+    }
 }
 
 .playerX {
@@ -137,20 +156,15 @@
         display: block;
         visibility: hidden;
         opacity: 0;
-        text-shadow:
-            0 0 5px #a855f7,
-            0 0 10px #a855f7,
-            0 0 20px #9333ea,
-            0 0 40px #7e22ce;
-
+        text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #9333ea, 0 0 40px #7e22ce;
+        animation: countAnimate 1s ease forwards;
+        -webkit-animation: countAnimate 1s ease forwards;
         &:nth-child(1) {
-            animation: countAnimate 1s 1s forwards;
-            -webkit-animation: countAnimate 1s 1s ease forwards;
+            animation-delay: 1s;
         }
 
         &:nth-child(2) {
-            animation: countAnimate 1s 2s forwards;
-            -webkit-animation: countAnimate 1s 2s ease forwards;
+            animation-delay: 2s;
         }
 
         /* &:nth-child(3) {
