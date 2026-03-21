@@ -27,7 +27,7 @@ function MenuPage() {
                                 <img src={multijugador} alt="" />
                             </div>
                             <h3 className='title-main-btn'><span className='versus-text'>VS</span> OPONENTE</h3>
-                            <p className='text-description-btn'>Juega contra un jugador local y vencelo</p>
+                            <p className='text-description-btn'>Juega contra un jugador local y vence</p>
                         </button>
                     </div>
                     <div className='btns-options'>

@@ -3,22 +3,28 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+
     @media(min-width: 540px) {
         max-width: 420px;
         margin-top: 5rem;
     }
+
     @media(min-width: 768px) {
         max-width: 440px;
     }
+
     @media(min-width: 912px) {
         max-width: 480px;
     }
+
     @media(min-width: 1024px) {
         max-width: 520px;
     }
+
     @media(min-width: 1200px) {
         max-width: 600px;
     }
+
     &::before {
         content: "";
         position: absolute;
@@ -142,8 +148,13 @@
             img {
                 filter: drop-shadow(0 10px 10px #6366F1);
                 -webkit-filter: drop-shadow(0 10px 10px #6366F1);
-                animation: imgFloatAnimate 6s 30s ease forwards;
-                -webkit-animation: imgFloatAnimate 6s 30s ease forwards;
+                animation:
+                    imgFloatAnimate 6s 30s ease 1 forwards,
+                    imgFloatAnimate 6s 45s ease 1 forwards,
+                    imgFloatAnimate 6s 60s ease 5 forwards,
+                    imgFloatAnimate 6s 120s ease 1 forwards,
+                    imgFloatAnimate 6s 135s ease 1 forwards,
+                    imgFloatAnimate 6s 150s ease 3 forwards;
             }
         }
 
@@ -171,7 +182,10 @@
             img {
                 filter: drop-shadow(0 10px 10px #8B5CF6);
                 -webkit-filter: drop-shadow(0 10px 10px #8B5CF6);
-            }
+                animation:
+                    imgShakeAnimate 0.5s 90s ease 1 forwards,
+                    imgShakeAnimate 0.5s 190s ease 1 forwards;
+                }
         }
 
         .versus-text {
@@ -260,5 +274,27 @@
         -o-transform: scale(1);
         translate: -50% 0;
         opacity: 1;
+    }
+}
+
+@keyframes imgShakeAnimate {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

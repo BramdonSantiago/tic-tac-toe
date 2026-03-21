@@ -13,7 +13,7 @@ const StartingGameModal = ({ isOpen, onClose }: any) => {
     useEffect(() => {
         if (isOpen) {
             setShow(true);
-
+            document.querySelector("body")!.style.overflow =  "hidden";
             const timer = setTimeout(() => {
                 handleClose();
             }, 5000);
@@ -26,6 +26,7 @@ const StartingGameModal = ({ isOpen, onClose }: any) => {
         setShow(false); // activa animación de salida
 
         setTimeout(() => {
+            document.querySelector("body")!.style.overflow =  "visible";
             onClose(); // desmonta después de la animación
         }, 1000); // duración del fade-out
     };
