@@ -40,12 +40,12 @@ body {
     -o-transform: translate(0, 0); 
   }
   50% {
-    transform: translate(-90px, 90px);
-    -webkit-transform: translate(-90px, 90px);
-    -moz-transform: translate(-90px, 90px);
-    -ms-transform: translate(-90px, 90px);
-    -o-transform: translate(-90px, 90px);
-}
+    transform: translate(-190px, 40px);
+    -webkit-transform: translate(-190px, 40px);
+    -moz-transform: translate(-190px, 40px);
+    -ms-transform: translate(-190px, 40px);
+    -o-transform: translate(-190px, 40px);
+  }
   100% {
     transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
