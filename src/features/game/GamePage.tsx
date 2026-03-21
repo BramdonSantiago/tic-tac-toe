@@ -205,7 +205,10 @@ function GamePage() {
                 </div>
             </div>
             {vsAI && (
-                <StartingGameModal isOpen={open} onClose={() => setOpen(false)}></StartingGameModal>
+                <StartingGameModal isOpen={open} onClose={() => setOpen(false)} mode="AI"></StartingGameModal>
+            )}
+            {!vsAI && (
+                <StartingGameModal isOpen={open} onClose={() => setOpen(false)} mode="opponent"></StartingGameModal>
             )}
         </>
     )
