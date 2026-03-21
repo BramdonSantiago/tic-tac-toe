@@ -68,12 +68,13 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
                         {/* <span>1</span> */}
                     </div>
                     {(mode === 'AI') && (
-                        <span className={styles.modalTextGame}>¡VENGA!</span>
+                        <div className={styles.modalTextGame}>¡VENGA!</div>
                     )}
                     {(mode === 'opponent') && (
-                        <span className={styles.modalTextGame}>¡VAMOS!</span>
+                        <div className={styles.modalTextGame}>¡VAMOS!</div>
                     )}
                 </div>
+                <div className={styles.modalTextLoading}>entrando...</div>
             </div>
         </div>,
         modalRoot
