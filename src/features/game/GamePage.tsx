@@ -195,12 +195,12 @@ function GamePage() {
                             </p>
                         )}
                     </div>
-                    <div className='btns-content'>
-                        {(resultWinner || tie) && (
+                    {(resultWinner || tie) && (
+                        <div className='btns-content'>
                             <button type='button' onClick={continueGaming} className='btn btn-primary'>Continuar partida</button>
-                        )}
-                        <button type='button' onClick={restartGame} className='btn btn-secondary'>Reiniciar partida</button>
-                    </div>
+                            <button type='button' onClick={restartGame} className='btn btn-secondary'>Reiniciar partida</button>
+                        </div>
+                    )}
 
                 </div>
             </div>
