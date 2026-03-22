@@ -29,6 +29,12 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
 
         setTimeout(() => {
             document.querySelector("body")!.style.overflow =  "visible";
+            const squares = document.querySelectorAll(".square");
+
+            squares.forEach((element) => {
+                element.classList.add("square-animate");
+            })
+
             onClose(); // desmonta después de la animación
         }, 1000); // duración del fade-out
     };

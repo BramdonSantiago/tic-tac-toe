@@ -176,8 +176,8 @@
         /*box-shadow: inset 0 0 6px #00E5FF, inset 0 0 12px #00E5FF;
         */cursor: pointer;
         position: relative;
-        animation: squareAnimate 1s 6s ease 1 forwards;
-        -webkit-animation: squareAnimate 1s 6s ease 1 forwards;
+        animation: squareAnimate 1s 1s ease forwards;
+        -webkit-animation: squareAnimate 1s 1s ease forwards;
         @media(min-width: 768px) {
             min-height: 7rem;
         }
@@ -236,6 +236,11 @@
                 0 0 20px #10fefe;
         }
     }
+}
+
+.square-animate {
+    animation: squareAnimate 1s 1s ease forwards;
+    -webkit-animation: squareAnimate 1s 1s ease forwards;
 }
 
 .square.filled .player-symbol {
