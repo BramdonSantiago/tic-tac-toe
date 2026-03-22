@@ -55,6 +55,18 @@
         width: 100%;
         height: 100%;
     }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/img/tablero-3.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.03;
+        z-index: -1;
+    }
 }
 
 .modalTextVersus {
