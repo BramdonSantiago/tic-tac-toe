@@ -15,7 +15,11 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
     useEffect(() => {
         if (isOpen) {
             setShow(true);
-            document.querySelector("body")!.style.overflow =  "hidden";
+            document.querySelector("body")!.style.overflow = "hidden";
+            // const squares = document.querySelectorAll(".square");
+            // squares.forEach((square: any) => {
+            //     square.style.boxShadow = "inset 0 0 6px transparent, inset 0 0 12px transparent";
+            // })
             const timer = setTimeout(() => {
                 handleClose();
             }, 5000);
@@ -28,12 +32,13 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
         setShow(false); // activa animación de salida
 
         setTimeout(() => {
-            document.querySelector("body")!.style.overflow =  "visible";
-            const squares = document.querySelectorAll(".square");
+            document.querySelector("body")!.style.overflow = "visible";
 
-            squares.forEach((element) => {
-                element.classList.add("square-animate");
-            })
+            // const squares = document.querySelectorAll(".square");
+
+            // squares.forEach((square: any) => {
+            //     square.classList.add("square-animate");
+            // })
 
             onClose(); // desmonta después de la animación
         }, 1000); // duración del fade-out
@@ -49,7 +54,7 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
                 {(mode === 'AI') && (
                     <div className={styles.modalTextVersus}>
                         <img src={playerX} alt="" className={styles.playerX} />
-                        <span className={styles.versusText}>VS</span> 
+                        <span className={styles.versusText}>VS</span>
                         <img src={robot} alt="" className={styles.playerIA} />
                     </div>
 
@@ -57,7 +62,7 @@ const StartingGameModal = ({ isOpen, onClose, mode }: any) => {
                 {(mode === 'opponent') && (
                     <div className={styles.modalTextVersus}>
                         <img src={playerXOrange} alt="" className={styles.playerXOrange} />
-                        <span className={styles.versusText}>VS</span> 
+                        <span className={styles.versusText}>VS</span>
                         <img src={playerO} alt="" className={styles.playerO} />
                     </div>
                 )}
